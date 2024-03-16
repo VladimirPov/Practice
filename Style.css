@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+   margin: 10px 0 5px 0;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+select {
+  padding: 5px;
+  margin: 0 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: #C5F6FF;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 0 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: #C5F6FF;
+}
+
+input[type=submit] {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: #21D975;
+  text-emphasis-color: white;
+}
+
+input[type=submit]:hover {
+  width: 100%;
+  cursor: pointer;
+  background: #1DC067;
+}
+
+input[type=submit]:active {
+  width: 95%;
+  background: #18A458;
+}
