@@ -1,3 +1,13 @@
+body {
+  color: #1E1F22;
+  background: #F6F6F6;
+}
+
+body.dark-theme {
+  color: #F6F6F6;
+  background: #1E1F22;
+}
+
 .container {
   width: 100%;
   height: 100%;
@@ -56,3 +66,29 @@ input[type=submit]:active {
   width: 95%;
   background: #18A458;
 }
+
+Button {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0 10px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 12px;
+  color: black;
+  background-color: white;
+}
+
+.toBlack {
+  color: white;
+  background-color: black;
+}
+
+Button:active {
+  width: 110%;
+  transform: rotate(15deg);
+}
+
+
+
+
+
