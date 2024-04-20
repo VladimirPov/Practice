@@ -1,0 +1,26 @@
+h1 {
+    margin: 20px;
+}
+
+h3 {
+    margin: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.linkConteiner {
+    display: block;
+}
+    
+
+.linkOne {
+    margin: 20px;
+    font-weight: bold;
+   
+    display: inline-block;
+}

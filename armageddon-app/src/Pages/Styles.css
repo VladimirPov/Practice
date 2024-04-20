@@ -1,0 +1,21 @@
+.img-container {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    margin: 20px;
+    height: 200px;
+    border-radius: 100px;
+    box-shadow: 0 0 0 3px #494ee3, 0 0 13px #333;
+ }
+
+img {
+    transform: translate(0,-50%);
+    height: auto;
+    width: auto;
+    object-fit: cover;
+}
+
+h2 {
+    margin: 20px;
+    text-align: center;
+}
