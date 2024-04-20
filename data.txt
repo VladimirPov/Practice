@@ -1,0 +1,2 @@
+{"login":"Vova","password":"123","role":"Admin"}
+{"login":"Vladimir","password":"666","role":"Manager"}
