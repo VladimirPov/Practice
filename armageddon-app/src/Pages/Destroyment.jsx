@@ -1,5 +1,4 @@
 import { Header } from "../components/header/Header"
-import styles from "./Styles.css"
 import destroyImage from "../images/destroy.jpg"
 
 export const Destroyment = () => {
