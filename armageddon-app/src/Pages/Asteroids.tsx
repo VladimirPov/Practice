@@ -1,15 +1,25 @@
-import { Header } from "../components/header/Header"
+import { Header } from "../components/header/Header.tsx"
 import styles from "./Pages.module.css"
 import { useEffect, useState } from "react"
-import {AsteroidCard} from "../components/AsteroidCard/AsteroidCard.jsx"
+import {AsteroidCard} from "../components/AsteroidCard/AsteroidCard.tsx"
 
 export const Asteroids = () => {
-    const [asteroids, setAsteroids] = useState([])
+    const [asteroids, setAsteroids] = useState<{
+        name: string;
+        date: string;
+        distance: {
+            kilometer: number;
+            lunar: number;
+        },
+        size: number;
+        id: string;
+        isDangerous: boolean
+     }[]>([])
     const[onlyDangerous, setOnlyDangerous] = useState(false)
     const api_key = process.env.react;
     useEffect(() => {
         try{
-            fetch(`https://api.nasa.gov/neo/rest/v1/feed?api_key=${(api_key == undefined)? "DEMO_KEY" : api_key}`).then((res)=>{
+            fetch(`https://api.nasa.gov/neo/rest/v1/feed?api_key=${(api_key === undefined)? "DEMO_KEY" : api_key}`).then((res)=>{
                 return res.json();
             }).then((responce) => {
                 console.log(responce);
@@ -36,19 +46,19 @@ export const Asteroids = () => {
             console.log(err)
             setAsteroids(generateAsteroids())
         }
-    }, [])
+    }, [api_key])
     let [isKM, setKM] = useState(false);
     return <div>
         <Header/>
         <div className={styles.filterConteiner}>
             <div className={styles.showDangerousOnly}>
-                <input type="checkbox" value={onlyDangerous} onChange={()=>setOnlyDangerous(!onlyDangerous)}></input>
+                <input type="checkbox" value={onlyDangerous as unknown as string} onChange={()=>setOnlyDangerous(!onlyDangerous)}></input>
                 Показать только опасные
             </div>
             <div className={styles.distanceMode}>
                 Расстояние 
-                <button className={styles.distanceButtons} value ={isKM} onClick={()=>setKM(isKM = false)}> в километрах</button>
-                <button className={styles.distanceButtons} value ={isKM} onClick={()=>setKM(isKM = true)}> в дистанциях до луны</button>
+                <button className={styles.distanceButtons} value ={isKM as unknown as string} onClick={()=>setKM(isKM = false)}> в километрах</button>
+                <button className={styles.distanceButtons} value ={isKM as unknown as string} onClick={()=>setKM(isKM = true)}> в дистанциях до луны</button>
             </div>
         </div>
         {isKM ? onlyDangerous ? asteroids.filter((item)=>item.isDangerous).map((item)=><AsteroidCard key={item.id}
