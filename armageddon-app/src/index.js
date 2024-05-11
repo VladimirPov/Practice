@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals.js';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Asteroid } from './Pages/Asteroid.jsx';
-import { Destroyment } from './Pages/Destroyment.jsx';
-import { Asteroids } from './Pages/Asteroids.jsx';
+import { Asteroid } from './Pages/Asteroid.tsx';
+import { Destroyment } from './Pages/Destroyment.tsx';
+import { Asteroids } from './Pages/Asteroids.tsx';
 
 const router = createBrowserRouter([
   {
